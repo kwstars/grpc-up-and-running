@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"github.com/kwstars/grpc-up-and-running/api/product_info"
+	pb "github.com/kwstars/grpc-up-and-running/api/product_info/v1"
 	"google.golang.org/grpc"
 	"log"
 	"time"
@@ -19,7 +19,7 @@ func main() {
 		log.Fatalf("did not connect: %v", err)
 	}
 	defer conn.Close()
-	c := product_info.NewProductInfoClient(conn)
+	c := pb.NewProductInfoClient(conn)
 
 	// Contact the server and print out its response.
 	name := "Apple iPhone 11"
@@ -27,13 +27,13 @@ func main() {
 	price := float32(699.00)
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := c.AddProduct(ctx, &product_info.Product{Name: name, Description: description, Price: price})
+	r, err := c.AddProduct(ctx, &pb.Product{Name: name, Description: description, Price: price})
 	if err != nil {
 		log.Fatalf("Could not add product: %v", err)
 	}
 	log.Printf("Product ID: %s added successfully", r.Value)
 
-	product, err := c.GetProduct(ctx, &product_info.ProductID{Value: r.Value})
+	product, err := c.GetProduct(ctx, &pb.ProductID{Value: r.Value})
 	if err != nil {
 		log.Fatalf("Could not get product: %v", err)
 	}

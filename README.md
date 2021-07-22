@@ -19,7 +19,6 @@ go install google.golang.org/grpc/advanced/protoc-gen-go-grpc@v1.1
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
-
 --- 
 [Quick start for gRPC](https://grpc.io/docs/languages/go/quickstart/)
 
