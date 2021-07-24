@@ -58,8 +58,8 @@ func (s *server) GetProduct(ctx context.Context, in *wrapper.StringValue) (*pb.P
 func main() {
 	getwd, _ := os.Getwd()
 	log.Println(getwd)
-	cert, err := tls.LoadX509KeyPair(filepath.Join("secured", "certs", "server.crt"),
-		filepath.Join("secured", "certs", "server.key"))
+	cert, err := tls.LoadX509KeyPair(filepath.Join("secured", "basic_authentication", "certs", "server.crt"),
+		filepath.Join("secured", "basic_authentication", "certs", "server.key"))
 	if err != nil {
 		log.Fatalf("failed to load key pair: %s", err)
 	}
