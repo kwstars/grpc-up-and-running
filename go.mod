@@ -6,6 +6,7 @@ require (
 	cloud.google.com/go v0.56.0 // indirect
 	github.com/HdrHistogram/hdrhistogram-go v1.1.0 // indirect
 	github.com/gofrs/uuid v4.0.0+incompatible
+	github.com/golang/mock v1.6.0
 	github.com/golang/protobuf v1.5.0
 	github.com/google/uuid v1.1.2
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
@@ -17,7 +18,6 @@ require (
 	github.com/uber/jaeger-lib v2.4.1+incompatible
 	go.opencensus.io v0.23.0
 	go.uber.org/atomic v1.9.0 // indirect
-	golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4 // indirect
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	google.golang.org/genproto v0.0.0-20200806141610-86f49bd18e98
 	google.golang.org/grpc v1.39.0
