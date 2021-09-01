@@ -33,7 +33,7 @@ func TestAddProduct(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
-	moclProdInfoClient := mock_v2.NewMockProductInfoClient(ctrl)
+	moclProdInfoClient := mock.NewMockProductInfoClient(ctrl)
 
 	name := "Sumsung S10"
 	description := "Samsung Galaxy S10 is the latest smart phone, launched in February 2019"
@@ -59,7 +59,8 @@ func testAddProduct(t *testing.T, client pb.ProductInfoClient) {
 
 	r, err := client.AddProduct(ctx, &pb.Product{Name: name, Description: description, Price: price})
 
-	if err != nil || r.GetValue() != "Product:Sumsung dS10" {
+	//if err != nil || r.GetValue() != "Product:Sumsung dS10" {
+	if err != nil || r.GetValue() != "Product:Sumsung S10" {
 		t.Errorf("mocking failed")
 	}
 	t.Log("Reply : ", r.GetValue())

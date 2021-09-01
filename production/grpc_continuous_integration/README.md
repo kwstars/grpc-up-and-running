@@ -3,8 +3,7 @@
 
 ```bash
 # Clinet Mock
-mockgen github.com/kwstars/grpc-up-and-running/api/product_info/v2 ProductInfoClient > production/grpc_continuous_integration/mock/prodinfo_mo
-ck.go
+mockgen github.com/kwstars/grpc-up-and-running/api/product_info/v2 ProductInfoClient > production/grpc_continuous_integration/mock/prodinfo_mock.go
 ```
 
 ## ghz
